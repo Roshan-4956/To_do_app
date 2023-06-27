@@ -5,7 +5,7 @@
         <div class="form-group">
             <label for="task">Task</label>
             <input type="text" class="form-control" id="task" placeholder="Enter task" ngModel name="task" required>
-            <small *ngif="taskForm.invalid && taskForm.dirty" id="errormsg" class="form-text text-danger">Required field</small>
+            <small *ngIf="taskForm.invalid && taskForm.dirty" id="errormsg" class="form-text text-danger">Required field</small>
         </div>
         <button [disabled]="taskForm.invalid" id="submitButton" type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -20,7 +20,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let t of taskArray ; index as i">
+            <tr *ngFor="let t of taskArray ; index as i" >
                 <td>{{t.taskName}}</td>
                 <td><input (change)="onCheck(i)" id="mycheckbox" type="checkbox"></td>
                 <td><button class="btn btn-danger btn-sm" (click)="onDelete(i)">Delete</button></td>
